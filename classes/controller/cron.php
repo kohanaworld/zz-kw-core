@@ -2,6 +2,11 @@
 
 abstract class Controller_Cron extends Controller {
 
+	/**
+	 * @TODO Make it possible to run cli controllers in dev environment via http
+	 * @throws HTTP_Exception_403
+	 * @return void
+	 */
 	public function before()
 	{
 		if ( ! Kohana::$is_cli)

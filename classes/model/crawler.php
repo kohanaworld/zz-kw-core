@@ -7,6 +7,13 @@ class Model_Crawler extends Model {
 	protected $_index_column = 'type';
 	protected $_index_value;
 
+	/**
+	 * Get/set crawler type
+	 *
+	 * @throws Kohana_Exception
+	 * @param null $type
+	 * @return Model_Crawler
+	 */
 	public function type($type = NULL)
 	{
 		if (func_num_args() > 0)
@@ -25,6 +32,8 @@ class Model_Crawler extends Model {
 	}
 
 	/**
+	 * Get grawler status
+	 *
 	 * @param bool   create new record if not exists
 	 * @return FALSE|array
 	 */
@@ -50,6 +59,13 @@ class Model_Crawler extends Model {
 		return FALSE;
 	}
 
+	/**
+	 * Update crawler status
+	 *
+	 * @param  $page
+	 * @param  $stop
+	 * @return array|FALSE
+	 */
 	public function update_status($page, $stop)
 	{
 		$data = array(
