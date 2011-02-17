@@ -4,8 +4,8 @@
  * Abstract Controller Cron
  *
  * @package   KW-Core
- * @author	  Kohana-World Development Team
- * @license	  MIT License
+ * @author    Kohana-World Development Team
+ * @license   MIT License
  * @copyright 2011 Kohana-World Development Team
  */
 abstract class Controller_Cron extends Controller {
