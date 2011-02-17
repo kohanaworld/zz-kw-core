@@ -17,7 +17,7 @@ abstract class Controller_Cron extends Controller {
 	 */
 	public function before()
 	{
-		if ( ! Kohana::$is_cli)
+		if ( ! Kohana::$is_cli AND Kohana::$environment == Kohana::PRODUCTION)
 		{
 			throw new HTTP_Exception_403('Trying to access CLI controller from HTTP');
 		}
