@@ -42,11 +42,11 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 		}
 
 		// Auth require check
-		if ($this->_auth_required AND ! Auth::instance()->logged_in())
+		/*if ($this->_auth_required AND ! Auth::instance()->logged_in())
 		{
 			Session::instance()->set('url', $_SERVER['REQUEST_URI']);
 			$this->request->redirect('auth/login');
-		}
+		}*/
 
 		if ($this->auto_render)
 		{
