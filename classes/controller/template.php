@@ -13,7 +13,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 	/**
 	 * Page template
 	 *
-	 * @var string
+	 * @var View
 	 */
 	public $template = 'frontend/template/main';
 
@@ -36,7 +36,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 		parent::before();
 
 		// Ajax-like request check
-		if ($this->request->is_ajax() OR Request::$initial->is_initial() !== Request::$current )
+		if ($this->request->is_ajax() OR ! $this->request->is_initial() )
 		{
 			$this->_ajax = TRUE;
 		}
@@ -65,7 +65,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 		// Using template content on Ajax-like requests
 		if ($this->_ajax === TRUE)
 		{
-			$this->request->response = $this->template->content;
+			$this->response->body($this->template->content);
 		}
 		else
 		{
