@@ -53,6 +53,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 			// default template variables  initialization
 			$this->template->title    = ''; // page title
 			$this->template->content  = ''; // page content
+			$this->template->sidebar  = ''; // page sidebar
 			// Profiler
 			$this->template->debug    = (Kohana::$environment > Kohana::PRODUCTION)
 			                                ? View::factory('profiler/stats')
@@ -69,6 +70,9 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 		}
 		else
 		{
+			StaticCss::instance()->addCss('/media/css/reset.min.css');
+			StaticCss::instance()->addCss('/media/css/main.css');
+			StaticJs::instance()->addJs('/media/js/libs/jquery-1.5.1.min.js');
 			parent::after();
 		}
 	}
