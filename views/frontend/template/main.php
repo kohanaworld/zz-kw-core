@@ -43,5 +43,6 @@
 	</div>
 <?php echo StaticJs::instance()->getJsAll()?>
 <?php echo $debug?>
+<?php echo $counters?>
 </body>
 </html>

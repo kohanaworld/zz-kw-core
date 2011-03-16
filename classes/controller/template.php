@@ -54,6 +54,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 			$this->template->title    = ''; // page title
 			$this->template->content  = ''; // page content
 			$this->template->sidebar  = ''; // page sidebar
+			$this->template->counters = View::factory('counters');
 			// Profiler
 			$this->template->debug    = (Kohana::$environment > Kohana::PRODUCTION)
 			                                ? View::factory('profiler/stats')
