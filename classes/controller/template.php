@@ -74,6 +74,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 			StaticCss::instance()->addCss('/media/css/reset.min.css');
 			StaticCss::instance()->addCss('/media/css/main.css');
 			StaticJs::instance()->addJs('/media/js/libs/jquery-1.5.1.min.js');
+			StaticJs::instance()->addJs('/media/js/libs/jquery-ui-1.8.10.custom.min.js');
 			parent::after();
 		}
 	}
