@@ -25,6 +25,15 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 	protected $_auth_required = FALSE;
 
 	/**
+	 * @var Auth
+	 */
+	protected $_auth;
+
+	/**
+	 * @var Model_User
+	 */
+	protected $_user;
+	/**
 	 * Is the request is Ajax-like
 	 *
 	 * @var boolean
@@ -49,6 +58,9 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 			StaticJs::instance()->addJs('https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js');
 			StaticJs::instance()->addJs('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js');
 		}
+
+		$this->_auth = Auth::instance();
+		$this->_user = $this->_auth->get_user();
 
 		// Auth require check
 		/*if ($this->_auth_required AND ! Auth::instance()->logged_in())
