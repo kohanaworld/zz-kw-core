@@ -40,6 +40,15 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 		{
 			$this->_ajax = TRUE;
 		}
+		else
+		{
+			StaticCss::instance()->addCss('/media/css/reset.min.css');
+			StaticCss::instance()->addCss('/media/css/main.css');
+			StaticCss::instance()->addCss('/media/css/pagination.css');
+			StaticCss::instance()->addCss('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/base/jquery-ui.css');
+			StaticJs::instance()->addJs('https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js');
+			StaticJs::instance()->addJs('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js');
+		}
 
 		// Auth require check
 		/*if ($this->_auth_required AND ! Auth::instance()->logged_in())
@@ -71,11 +80,6 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 		}
 		else
 		{
-			StaticCss::instance()->addCss('/media/css/reset.min.css');
-			StaticCss::instance()->addCss('/media/css/main.css');
-			StaticCss::instance()->addCss('/media/css/pagination.css');
-			StaticJs::instance()->addJs('/media/js/libs/jquery-1.5.1.min.js');
-			StaticJs::instance()->addJs('/media/js/libs/jquery-ui-1.8.10.custom.min.js');
 			parent::after();
 		}
 	}
