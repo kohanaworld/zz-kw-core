@@ -80,6 +80,7 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 			$this->template->debug    = (Kohana::$environment > Kohana::PRODUCTION)
 			                                ? View::factory('profiler/stats')
 			                                : '';
+			$this->template->bind_global('_user', $this->_user);
 		}
 	}
 

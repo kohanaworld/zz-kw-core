@@ -15,6 +15,12 @@
 					<li><a href="#">Главная</a></li>
 					<li><a href="#">Модули</a></li>
 					<li><a href="#">Разработчики</a></li>
+					<li><?php if ($_user) : ?>
+						<a href="/profile"><?php echo $_user->username ?></a>
+						<?php else : ?>
+						<a href="/login">Войти</a>
+						<?php endif; ?>
+					</li>
 				</ul>
 				<div id="profile"></div>
 				<div class="corner_right"></div>
