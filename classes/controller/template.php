@@ -76,10 +76,6 @@ abstract class Controller_Template extends Kohana_Controller_Template {
 			$this->template->content  = ''; // page content
 			$this->template->sidebar  = ''; // page sidebar
 			$this->template->counters = View::factory('counters');
-			// Profiler
-			$this->template->debug    = (Kohana::$environment > Kohana::PRODUCTION)
-			                                ? View::factory('profiler/stats')
-			                                : '';
 			$this->template->bind_global('_user', $this->_user);
 		}
 	}
