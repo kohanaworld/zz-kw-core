@@ -1,1 +1,1 @@
-kohana-world.com core module
+kohana.world core module
